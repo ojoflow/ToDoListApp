@@ -1,5 +1,5 @@
 import './style.css';
-//imort function for sidebar
+import {makeSideBar} from './projects'
 //import function for main task list area
 const content = document.querySelector('.content');
 
@@ -10,6 +10,7 @@ function makeHeader() {
 }
 function makeMain() {
     const main = document.createElement('main');
+    main.appendChild(makeSideBar())
     return main;
 }
 /** MAIN FUNCTIONALITIY */
