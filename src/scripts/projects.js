@@ -1,3 +1,5 @@
+// import {dropDown} from './utility'
+
 function makeSideBar() {
     const sidebar = document.createElement('div');
     sidebar.classList.add('sidebar');
@@ -7,16 +9,17 @@ function makeSideBar() {
     sidebar.appendChild(project);
 
     const sidetab = document.createElement('div');
-    sidetab.classList.add('sidetab', 'projects');
-    project.appendChild(sidetab)
+    sidetab.classList.add('sidetab');
+    project.appendChild(sidetab);
 
         const h2 = document.createElement('h2');
+        h2.classList.add('project');
         h2.innerText = '> Projects';
-        sidetab.appendChild(h2);
-
-        const h2Too = document.createElement('h2');
-        h2Too.innerText = '+';
-        sidetab.appendChild(h2Too);
+        sidetab.appendChild(h2);        
+        const plus = document.createElement('button');
+        plus.classList.add('plus');
+        plus.innerText = '+';
+        sidetab.appendChild(plus);
 
     const projectdropdown = document.createElement('projectdropdown');
     projectdropdown.classList.add('projectdropdown');
@@ -42,13 +45,35 @@ function makeSideBar() {
     completedsidetab.appendChild(completeflex);
     
     const h2Three = document.createElement('h2');
-    // const calendar = document.createElement('div');
-    // calendar.classList.add('calendar');
+   
     completeflex.appendChild(h2Three);
-    // h2Three.appendChild(calendar);
-    // h2Three.innerText = 'Completed';
+   
     h2Three.innerHTML = `<div class="calendar"></div>Completed`
+    
+    
     
     return sidebar;
 }
-export {makeSideBar};
+function dropDown() {
+    const drop = document.querySelector('.project');
+    console.log(drop);
+    const menuContent = document.querySelector('.projectdropdown');  
+ 
+    drop.addEventListener('click',()=>{
+        if(menuContent.style.display===""){
+        menuContent.style.display="block";
+        drop.innerText = ` v Projects`;
+        } else {
+        menuContent.style.display="";
+        drop.innerHTML = `> Projects`;
+        }
+    })
+}
+// function addSideBarToMain(){
+//     const main = document.querySelector('main');
+//     main.appendChild(makeSideBar());
+//     dropDown();
+//     console.log(dropDown());
+//     console.log(main);
+// }
+export {makeSideBar, dropDown};

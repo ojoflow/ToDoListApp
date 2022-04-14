@@ -27,13 +27,24 @@ main{
     margin-top: 20px;
     gap: 20px;
     background-color: #f4467d;
-    
-    
-}
-.projects {
     display: flex;
     justify-content: space-between;
     padding: 0 10px 0 10px;
+    
+    
+}
+.project {
+    width: 11vw;
+    height: 5vh;
+    font-size: 20px;
+}
+.plus {
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    padding: 0;
+    border: none;
+    background: none;
 }
 .projectdropdown{
     background-color: #292525;
